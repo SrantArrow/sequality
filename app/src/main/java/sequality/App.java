@@ -4,11 +4,47 @@
 package sequality;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+  public String getGreeting() {
+    return "Hello World!";
+  }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+  public String getTwoSumAndAverage() {
+    Calculate calculate = new Calculate();
+    int a = 2;
+    int b = 3;
+    double[] ans;
+    ans = new double[2];
+    ans = calculate.sumSimple(a, b);
+    String response = "Sum of " + a + " and " + b + " is " + (int) ans[0] + ". Average is " + ans[1] + ".";
+    return response;
+  }
+
+  public String getSumAndAverage() {
+    Calculate calculate = new Calculate();
+    int a = 1;
+    int b = 10;
+    double[] ans;
+    ans = new double[2];
+    ans = calculate.sumRange(a, b);
+    String response = "Sum of " + a + " to " + b + " is " + (int) ans[0] + ". Average is " + ans[1] + ".";
+    return response;
+  }
+
+  public String getSumSeparate() {
+    Calculate calculate = new Calculate();
+    int a = 1;
+    int b = 10;
+    int[] ans;
+    ans = new int[2];
+    ans = calculate.sumSeparate(a, b);
+    String response = "Sum of odd of " + a + " to " + b + " is " + (int) ans[0] + ". Sum of even is " + ans[1] + ".";
+    return response;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(new App().getGreeting());
+    System.out.println(new App().getTwoSumAndAverage());
+    System.out.println(new App().getSumAndAverage());
+    System.out.println(new App().getSumSeparate());
+  }
 }
